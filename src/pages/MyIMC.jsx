@@ -33,7 +33,7 @@ const MyIMC = () => {
 
   return (
     <div className="p-4 bg-white flex flex-col items-center h-screen">
-          <Arrow onClick={() => navigate("/")}></Arrow>
+          <Arrow onClick={() => navigate("/data-form")}></Arrow>
         <Logo />
 
       <div className="flex flex-col items-center justify-center pt-8 p-5">
