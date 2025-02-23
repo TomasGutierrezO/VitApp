@@ -31,7 +31,7 @@ const DataForm = () => {
         <Logo />
       </div>
       <p className="text-3xl font-bold text-[#36aaff] mt-9 mb-16">Calculemos tu IMC</p>
-      <div className="flex gap-4 mt-4 border border-gray-300 p-4 rounded-md m-20 ">
+      <div className="flex gap-4 mt-4 border border-gray-300 p-4 rounded-md m-20 mb-37 ">
         <div className="flex flex-col gap-4">
           <label htmlFor="Nombre" className="text-lg font-semibold m-2">Nombre</label>
           <label htmlFor="peso" className="text-lg font-semibold m-2">Peso</label>
