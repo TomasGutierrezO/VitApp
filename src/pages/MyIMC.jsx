@@ -7,12 +7,27 @@ import Arrow from "../components/Arrow"
 const MyIMC = () => {
   const navigate = useNavigate()
   const [accepted, setAccepted] = useState(false)
+  const [imc, setIMC] = useState("");
+  const [name, setNombre] = useState("");
+
 
   useEffect(() => {
     const acceptedTerms = localStorage.getItem("acceptedTerms")
     if (acceptedTerms) {
       setAccepted(JSON.parse(acceptedTerms))
     }
+
+    const storedName = localStorage.getItem("nombre")
+    const storedImc = localStorage.getItem("imc")
+
+    if (storedName) {
+      setNombre(storedName)
+    }
+
+    if (storedImc) {
+      setIMC(storedImc)
+    }
+
   }, [])
 
   const handleAcceptance = (isAccepted) => {
@@ -21,8 +36,7 @@ const MyIMC = () => {
   }
 
   // Estos valores deberían venir del local storage (falta)
-  const name = "Username"
-  const imc = 22
+  
 
   const getIMCStatus = (imc) => {
     if (imc < 18.5) return "Bajo peso"
