@@ -1,66 +1,79 @@
-import { useNavigate } from "react-router-dom"
-import { useState, useEffect } from "react"
-import Logo from "../components/Logo"
-import Button from "../components/Button"
-import Arrow from "../components/Arrow"
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Logo from "../components/Logo";
+import Button from "../components/Button";
+import Arrow from "../components/Arrow";
+import Swal from "sweetalert2";
 
 const MyIMC = () => {
-  const navigate = useNavigate()
-  const [accepted, setAccepted] = useState(false)
+  const navigate = useNavigate();
+  const [accepted, setAccepted] = useState(false);
   const [imc, setIMC] = useState("");
   const [name, setNombre] = useState("");
 
-
   useEffect(() => {
-    const acceptedTerms = localStorage.getItem("acceptedTerms")
+    const acceptedTerms = localStorage.getItem("acceptedTerms");
     if (acceptedTerms) {
-      setAccepted(JSON.parse(acceptedTerms))
+      setAccepted(JSON.parse(acceptedTerms));
     }
 
-    const storedName = localStorage.getItem("nombre")
-    const storedImc = localStorage.getItem("imc")
+    const storedName = localStorage.getItem("nombre");
+    const storedImc = localStorage.getItem("imc");
 
     if (storedName) {
-      setNombre(storedName)
+      setNombre(storedName);
     }
 
     if (storedImc) {
-      setIMC(storedImc)
+      setIMC(storedImc);
     }
-
-  }, [])
+  }, []);
 
   const handleAcceptance = (isAccepted) => {
-    setAccepted(isAccepted)
-    localStorage.setItem("acceptedTerms", JSON.stringify(isAccepted))
-  }
-
-  // Estos valores deberían venir del local storage (falta)
-  
+    setAccepted(isAccepted);
+    localStorage.setItem("acceptedTerms", JSON.stringify(isAccepted));
+  };
 
   const getIMCStatus = (imc) => {
-    if (imc < 18.5) return "Bajo peso"
-    if (imc < 25) return "Saludable"
-    if (imc < 30) return "Sobrepeso"
-    return "Obesidad"
-  }
+    if (imc < 18.5) return "Bajo peso";
+    if (imc < 25) return "Saludable";
+    if (imc < 30) return "Sobrepeso";
+    return "Obesidad";
+  };
+
+  const handleStart = () => {
+    if (!accepted) {
+      Swal.fire({
+        title: "Acepta los términos",
+        text: "Debes aceptar el tratamiento de datos para continuar.",
+        icon: "info",
+        confirmButtonText: "Entendido",
+        confirmButtonColor: "#36AAFF",
+      });
+      return;
+    }
+
+    navigate("/my-profile");
+  };
 
   return (
     <div className="p-4 bg-white flex flex-col items-center h-screen">
-          <Arrow onClick={() => navigate("/data-form")}></Arrow>
-        <Logo />
+      <Arrow onClick={() => navigate("/data-form")} />
+      <Logo />
 
       <div className="flex flex-col items-center justify-center pt-8 p-5">
         <h1 className="tracking-tight font-semibold p-2 text-3xl mb-4 text-center">
           {name}, tu índice de masa corporal es:
         </h1>
-        <p className="font-bold mx-5 text-[#36AAFF] text-3xl mb-8 text-center">{getIMCStatus(imc)}</p>
+        <p className="font-bold mx-5 text-[#36AAFF] text-3xl mb-8 text-center">
+          {getIMCStatus(imc)}
+        </p>
 
-        <div className="w-full bg-[#F5F9FF] rounded-lg p-10 border border-[#36AAFF]/20">
+        <div className="w-full bg-[#F5F9FF] rounded-lg p-10 mb-9 border border-[#36AAFF]/20">
           <p className="text-4xl font-bold text-[#36AAFF] text-center">{imc}</p>
         </div>
 
-        <div className="flex items-start gap-2 w-full mb-8 pt-19">
+        <div className="flex items-start gap-2 w-full  pt-17">
           <input
             type="checkbox"
             id="terms"
@@ -68,15 +81,15 @@ const MyIMC = () => {
             onChange={(e) => handleAcceptance(e.target.checked)}
             className="mt-1"
           />
-          <label htmlFor="terms" className="text-sm text-gray-600 ">
+          <label htmlFor="terms" className="text-sm text-gray-600">
             Acepto el tratamiento de mis datos personales de acuerdo con la política de privacidad
           </label>
         </div>
       </div>
 
-      <Button onClick={() => navigate("/my-profile")} text="Empecemos"/>
+      <Button onClick={handleStart} text="Empecemos" />
     </div>
-  )
-}
+  );
+};
 
-export default MyIMC
+export default MyIMC;
