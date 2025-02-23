@@ -15,8 +15,9 @@ const Gender = () => {
           style={{}}
           onClick={() => navigate("/")}
         />
-        <Logo className="" />
+        <Logo />
       </div>
+
       <div>
         <p className=' tracking-tight font-semibold p-2 text-3xl mb-9 pb-10 text-center'>Aumenta tu{"\n"} metabolismo con {"\n"} nuestra atención {"\n"}personalizada </p>
       </div>
@@ -24,15 +25,22 @@ const Gender = () => {
       
       <div className="flex justify-center gap-4 mt-10">
         {/* Femenino */}
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-300">
-          <img src="/Femenino.jpg" alt="Femenino" className="w-full h-full object-cover" />
+        <div className="flex flex-col items-center">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-300">
+            <img src="/Femenino.jpg" alt="Femenino" className="w-full h-full object-cover" />
+          </div>
+          <p className="tracking-tight font-semibold text-xl mt-2 text-center">Femenino</p>
         </div>
 
         {/* Masculino*/}
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-300">
-          <img src="/Masculino.jpg" alt="Imagen 2" className="w-full h-full object-cover" />
+        <div className="flex flex-col items-center">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-300">
+            <img src="/Masculino.jpg" alt="Imagen 2" className="w-full h-full object-cover" />
+          </div>
+          <p className="tracking-tight font-semibold text-xl mt-2 text-center">Masculino</p>
         </div>
       </div>
+
       <Button onClick={() => navigate("/data-form")} text="Continuar"/>
     </div>
     
