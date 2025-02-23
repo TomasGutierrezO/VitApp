@@ -22,7 +22,7 @@ const Gender = () => {
   
   return (
     <div className='p-4 bg-white flex flex-col items-center h-screen space-evenly'>
-      <div className="flex gap-4 p-2">
+      <div className="flex gap-4 ">
         <img 
           src="/flecha-atras.png" 
           alt="Atrás" 
@@ -34,12 +34,12 @@ const Gender = () => {
       </div>
 
       <div>
-        <p className=' tracking-tight font-semibold p-2 text-3xl mb-9 pb-10 text-center'>Aumenta tu{"\n"} metabolismo con {"\n"} nuestra atención {"\n"}personalizada </p>
+        <p className=' tracking-tight font-semibold p-2 text-3xl mb-9 pb-5 text-center'>Aumenta tu{"\n"} metabolismo con {"\n"} nuestra atención {"\n"}personalizada </p>
       </div>
-      <p className='font-bold mx-5 text-[#36AAFF] text-3xl pb-10 text-center  '>Selecciona tu genero:</p>
+      <p className='font-bold mx-5 text-[#36AAFF] text-3xl pb-6 text-center  '>Selecciona tu genero:</p>
       
       {/* Seleccionar Genero */}
-      <div className="flex justify-center gap-4 mt-10">
+      <div className="flex justify-center gap-4 mt-7 mb-13">
         {/* Femenino */}
         <div className="flex flex-col items-center" onClick={() => manejarSeleccion("Femenino")}>
           <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${
