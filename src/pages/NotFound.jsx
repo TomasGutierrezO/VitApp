@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom"
 import Logo from "../components/Logo"
 import Button from "../components/Button"
+import Arrow from "../components/Arrow"
 
 const NotFound = () => {
   const navigate = useNavigate()
 
   return (
     <div className="p-4 bg-white flex flex-col items-center h-screen">
+      <Arrow onClick={() => navigate("/my-profile")} />
       <Logo />
 
       <div className="flex flex-col items-center justify-center flex">
