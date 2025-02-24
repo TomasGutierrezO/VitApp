@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Logo from "../components/Logo"
 import Button from "../components/Button"
-import Arrow from "../components/Arrow"
 
 const NotFound = () => {
   const navigate = useNavigate()
