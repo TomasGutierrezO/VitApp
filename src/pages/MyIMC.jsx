@@ -10,6 +10,7 @@ const MyIMC = () => {
   const [accepted, setAccepted] = useState(false);
   const [imc, setIMC] = useState("");
   const [name, setNombre] = useState("");
+  const [imcStatus, setIMCStatus] = useState("");
 
   useEffect(() => {
     const acceptedTerms = localStorage.getItem("acceptedTerms");
@@ -19,6 +20,7 @@ const MyIMC = () => {
 
     const storedName = localStorage.getItem("nombre");
     const storedImc = localStorage.getItem("imc");
+    const storedIMCStatus = localStorage.getItem("imcStatus");
 
     if (storedName) {
       setNombre(storedName);
@@ -26,8 +28,21 @@ const MyIMC = () => {
 
     if (storedImc) {
       setIMC(storedImc);
+      setIMCStatus(getIMCStatus(parseFloat(storedImc)));
+    }
+
+    if (storedIMCStatus) {
+      setIMCStatus(storedIMCStatus);
     }
   }, []);
+
+  useEffect(() => {
+    if (imc) {
+      const status = getIMCStatus(parseFloat(imc));
+      setIMCStatus(status);
+      localStorage.setItem("imcStatus", status);
+    }
+  }, [imc]);
 
   const handleAcceptance = (isAccepted) => {
     setAccepted(isAccepted);
@@ -66,14 +81,14 @@ const MyIMC = () => {
           {name}, tu índice de masa corporal es:
         </h1>
         <p className="font-bold mx-5 text-[#36AAFF] text-3xl mb-8 text-center">
-          {getIMCStatus(imc)}
+          {imcStatus}
         </p>
 
         <div className="w-full bg-[#F5F9FF] rounded-lg p-10 mb-9 border border-[#36AAFF]/20">
           <p className="text-4xl font-bold text-[#36AAFF] text-center">{imc}</p>
         </div>
 
-        <div className="flex items-start gap-2 w-full  pt-17">
+        <div className="flex items-start gap-2 w-full pt-17">
           <input
             type="checkbox"
             id="terms"

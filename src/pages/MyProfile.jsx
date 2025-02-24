@@ -10,6 +10,8 @@ const MyProfile = () => {
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [imc, setIMC] = useState("");
+  const [imcStatus, setIMCStatus] = useState("");
+  
 
   useEffect(() => {
     setGenero(localStorage.getItem("generoSeleccionado") || "Masculino");
@@ -17,14 +19,8 @@ const MyProfile = () => {
     setPeso(localStorage.getItem("peso") || "0");
     setAltura(localStorage.getItem("altura") || "0");
     setIMC(localStorage.getItem("imc") || "0");
+    setIMCStatus(localStorage.getItem("imcStatus") || "Desconocido");
   }, []);
-
-  const getIMCStatus = (imc) => {
-    if (imc < 18.5) return "Bajo peso";
-    if (imc < 25) return "Saludable";
-    if (imc < 30) return "Sobrepeso";
-    return "Obesidad";
-  };
 
   return (
     <div className="p-4 bg-[#ffffff] flex flex-col h-screen items-center gap-10 max-h-screen">
@@ -61,7 +57,7 @@ const MyProfile = () => {
           <span className="font-semibold text-[#36AAFF]">IMC:</span> <span>{imc}</span>
         </div>
         <div className="flex justify-between border-b border-[#60AAFF] pb-2">
-          <span className="font-semibold text-[#36AAFF]">Estado:</span> <span>{getIMCStatus(imc)}</span>
+          <span className="font-semibold text-[#36AAFF]">Estado:</span> <span>{imcStatus}</span>
         </div>
       </div>
     </div>
@@ -69,4 +65,3 @@ const MyProfile = () => {
 };
 
 export default MyProfile;
-
