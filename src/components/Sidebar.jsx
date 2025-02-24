@@ -11,17 +11,17 @@ const Sidebar = ({ onClose }) => {
         <div className="flex justify-end p-4">
           <CloseButton onClick={onClose} /> 
         </div>
-        <ul className="uppercase p-4 text-white">
-          <li className="p-4 border-b border-gray-600" onClick={() => { navigate("/my-profile"); onClose(); }}>
+        <ul className="uppercase p-4 text-white font-semibold">
+          <li className="p-4 border-b border-white-600" onClick={() => { navigate("/my-profile"); onClose(); }}>
             Mi Perfil
           </li>
-          <li className="p-4 border-b border-gray-600" onClick={() => { navigate("/faq"); onClose(); }}>
+          <li className="p-4 border-b border-white-600" onClick={() => { navigate("/faq"); onClose(); }}>
             ¿Qué es el IMC?
           </li>
-          <li className="p-4 border-b border-gray-600" onClick={() => { navigate("/nut-plans"); onClose(); }}>
+          <li className="p-4 border-b border-white-600" onClick={() => { navigate("/nut-plans"); onClose(); }}>
             Plan de Nutrición
           </li>
-          <li className="p-4 border-b border-gray-600" onClick={() => { navigate("/diseases"); onClose(); }}>
+          <li className="p-4 border-b border-white-600" onClick={() => { navigate("/diseases"); onClose(); }}>
             Posibles Enfermedades
           </li>
         </ul>
@@ -34,4 +34,3 @@ const Sidebar = ({ onClose }) => {
 };
 
 export default Sidebar;
-
