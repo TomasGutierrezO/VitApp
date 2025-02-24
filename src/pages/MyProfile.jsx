@@ -27,7 +27,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="p-4 bg-[#ffffff] flex flex-col h-screen items-center gap-10">
+    <div className="p-4 bg-[#ffffff] flex flex-col h-screen items-center gap-10 max-h-screen">
      
       <div className="flex w-full justify-between mb-5 p-4">
         <SidebarSwitch onClick={() => setIsSidebarOpen(true)} />

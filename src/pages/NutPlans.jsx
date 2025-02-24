@@ -1,11 +1,9 @@
-"use client"
-
 import { useState } from "react"
 import Sidebar from "../components/Sidebar"
 import SidebarSwitch from "../components/SidebarSwitch"
 import AppName from "../components/AppName"
 
-const MealPlan = () => {
+const NutPlans = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const meals = [
@@ -72,4 +70,4 @@ const MealPlan = () => {
   )
 }
 
-export default MealPlan;
+export default NutPlans;
