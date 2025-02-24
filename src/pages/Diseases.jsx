@@ -11,22 +11,56 @@ const Diseases = () => {
 
   const diseases = {
     "Bajo peso": [
-      { title: "Anemia", content: "Déficit de hierro en la sangre, causando fatiga y debilidad. Prevención: Consumir alimentos ricos en hierro como carnes magras, espinacas, legumbres y cereales fortificados." },
-      { title: "Osteoporosis", content: "Huesos frágiles debido a la falta de calcio y vitamina D. Prevención: Consumir productos lácteos, almendras, vegetales de hoja verde y tomar suficiente sol para la producción de vitamina D." },
-      { title: "Deficiencias Nutricionales", content: "Falta de vitaminas esenciales para el cuerpo. Prevención: Mantener una dieta equilibrada con frutas, verduras, proteínas y carbohidratos saludables." },
+      { title: "Anemia", 
+        content: "Déficit de hierro en la sangre, causando fatiga y debilidad.", 
+        prevention: "Consumir alimentos ricos en hierro como carnes magras, espinacas, legumbres y cereales fortificados." 
+      },
+      { title: "Osteoporosis", 
+        content: "Huesos frágiles debido a la falta de calcio y vitamina D.", 
+        prevention: "Consumir productos lácteos, almendras, vegetales de hoja verde y tomar suficiente sol para la producción de vitamina D." 
+      },
+      { title: "Deficiencias Nutricionales", 
+        content: "Falta de vitaminas esenciales para el cuerpo.", 
+        prevention: "Mantener una dieta equilibrada con frutas, verduras, proteínas y carbohidratos saludables." 
+      },
     ],
     "Saludable": [
-      { title: "Menor riesgo de enfermedades", content: "Mantiene un equilibrio adecuado de nutrientes y bienestar general. Prevención: Seguir un estilo de vida activo, mantener una dieta balanceada y realizar chequeos médicos regulares." },
+      { title: "Menor riesgo de enfermedades", 
+        content: "Mantiene un equilibrio adecuado de nutrientes y bienestar general.", 
+        prevention: "Seguir un estilo de vida activo, mantener una dieta balanceada y realizar chequeos médicos regulares." 
+      },
     ],
     "Sobrepeso": [
-      { title: "Hipertensión", content: "Aumento de la presión arterial con riesgo de enfermedades cardíacas. Prevención: Reducir el consumo de sodio, realizar actividad física regularmente y mantener un peso saludable." },
-      { title: "Resistencia a la insulina", content: "Mayor probabilidad de desarrollar diabetes tipo 2. Prevención: Consumir alimentos con bajo índice glucémico, evitar azúcares refinados y mantener un estilo de vida activo." },
-      { title: "Dolores articulares", content: "Sobrecarga en las articulaciones causando molestias y desgaste. Prevención: Mantener un peso adecuado, realizar ejercicios de bajo impacto y fortalecer los músculos de soporte." },
+      { title: "Hipertensión", 
+        content: "Aumento de la presión arterial con riesgo de enfermedades cardíacas.", 
+        prevention: "Reducir el consumo de sodio, realizar actividad física regularmente y mantener un peso saludable." 
+      },
+      { title: "Resistencia a la insulina", 
+        content: "Mayor probabilidad de desarrollar diabetes tipo 2.", 
+        prevention: "Consumir alimentos con bajo índice glucémico, evitar azúcares refinados y mantener un estilo de vida activo." 
+      },
+      { title: "Dolores articulares", 
+        content: "Sobrecarga en las articulaciones causando molestias y desgaste.", 
+        prevention: "Mantener un peso adecuado, realizar ejercicios de bajo impacto y fortalecer los músculos de soporte." 
+      },
     ],
     "Obesidad": [
-      { title: "Diabetes tipo 2", content: "Alteración en la regulación del azúcar en sangre. Prevención: Controlar el consumo de carbohidratos simples, hacer ejercicio regularmente y mantener un peso saludable." },
-      { title: "Enfermedades cardíacas", content: "Aumento del riesgo de infartos y otros problemas cardiovasculares. Prevención: Llevar una dieta baja en grasas saturadas, hacer ejercicio y controlar el estrés." },
-      { title: "Apnea del sueño", content: "Dificultades respiratorias al dormir debido al exceso de peso. Prevención: Bajar de peso, evitar el alcohol y dormir en posiciones adecuadas." },
+      { title: "Diabetes tipo 2", 
+        content: "Alteración en la regulación del azúcar en sangre.", 
+        prevention: "Controlar el consumo de carbohidratos simples, hacer ejercicio regularmente y mantener un peso saludable." 
+      },
+      { title: "Enfermedades cardíacas", 
+        content: "Aumento del riesgo de infartos y otros problemas cardiovasculares.", 
+        prevention: "Llevar una dieta baja en grasas saturadas, hacer ejercicio y controlar el estrés." 
+      },
+      { title: "Apnea del sueño", 
+        content: "Dificultades respiratorias al dormir debido al exceso de peso.", 
+        prevention: "Bajar de peso, evitar el alcohol y dormir en posiciones adecuadas." 
+      },
+      { title: "Cancer de colon ", 
+        content: "Vesícula biliar y cáncer de endometrio son algunos de los diferentes tipos de cáncer que a menudo se asocian con peso corporal excesivo y alto IMC.", 
+        prevention: "Bajar de peso, evitar el alcohol y dormir en posiciones adecuadas." 
+      },
     ],
   };
 
@@ -60,6 +94,7 @@ const Diseases = () => {
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-[#36AAFF]">{enfermedades[currentIndex].title}</h3>
             <p className="text-gray-600 mt-2">{enfermedades[currentIndex].content}</p>
+            <p className="text-green-600 mt-2 font-medium">Prevención: {enfermedades[currentIndex].prevention}</p>
           </div>
           <div className="flex justify-between mt-4">
             <button onClick={handlePrev} className="px-4 py-2 bg-[#36AAFF] text-white rounded-lg">← Anterior</button>
