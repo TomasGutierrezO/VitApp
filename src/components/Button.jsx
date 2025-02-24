@@ -1,5 +1,3 @@
-
-
 const Button = ({text, onClick}) => {
 
   return (
