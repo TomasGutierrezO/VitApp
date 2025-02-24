@@ -8,7 +8,6 @@ const NotFound = () => {
 
   return (
     <div className="p-4 bg-white flex flex-col items-center h-screen">
-      <Arrow onClick={() => navigate("/")}></Arrow>
       <Logo />
 
       <div className="flex flex-col items-center justify-center flex">
