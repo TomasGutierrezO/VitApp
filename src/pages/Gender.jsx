@@ -8,7 +8,6 @@ const Gender = () => {
   const [seleccionado, setSeleccionado] = useState(null);
 
   useEffect(() => {
-    // Cargar la selección guardada en localStorage al cargar la página
     const generoGuardado = localStorage.getItem("generoSeleccionado");
     if (generoGuardado) {
       setSeleccionado(generoGuardado);
