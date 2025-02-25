@@ -1,7 +1,7 @@
 const Button = ({text, onClick}) => {
 
   return (
-  <button onClick={onClick} className='drop-shadow-md text-xl text-white w-33 h-9 bg-[#36AAFF] rounded-sm'>{text}</button>
+  <button onClick={onClick} className='drop-shadow-md text-xl text-white w-36 h-12 bg-[#36AAFF] rounded-sm'>{text}</button>
   );
 };
 
