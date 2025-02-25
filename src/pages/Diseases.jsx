@@ -23,6 +23,10 @@ const Diseases = () => {
         content: "Falta de vitaminas esenciales para el cuerpo.", 
         prevention: "Mantener una dieta equilibrada con frutas, verduras, proteínas y carbohidratos saludables." 
       },
+      { title: "Problemas Cardiacos", 
+        content: "Los problemas cardiacos como el prolapso de la valvula mitrial, las arritmias y la insuficiencia cardíaca pueden surgir a partir de un IMC bajo. Además, un desequilibrio de los minerales necesarios para la función muscular puede alterar el ritmo normal del corazón", 
+        prevention: "No fumar\n Realizar más actividades fisicas\n Llevar una dieta saludable para el corazón con un consumo alto de verduras y frutas" 
+      },
     ],
     "Saludable": [
       { title: "Menor riesgo de enfermedades", 
@@ -42,6 +46,10 @@ const Diseases = () => {
       { title: "Dolores articulares", 
         content: "Sobrecarga en las articulaciones causando molestias y desgaste.", 
         prevention: "Mantener un peso adecuado, realizar ejercicios de bajo impacto y fortalecer los músculos de soporte." 
+      },
+      { title: "Apnea del sueño", 
+        content: "Problemas en la respiración, la respiración es superficial y se detiene durante el sueño por la cantidad excesiva de grasa que se almacena al rededor del cuello y bloquea las vías respiratorias.", 
+        prevention: "Perder grasa corporal\n Dormir de lado\n Realizar más actividades fisicas\n Mantener una alimentación equilibrada\n Evitar fumar" 
       },
     ],
     "Obesidad": [
