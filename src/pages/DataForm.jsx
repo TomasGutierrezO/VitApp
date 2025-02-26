@@ -47,7 +47,7 @@ const DataForm = () => {
         <Logo />
       </div>
       <p className="text-3xl font-bold text-[#36aaff] mb-12">Calculemos tu IMC</p>
-      <div className="flex flex-col gap-4 mt-4 border border-gray-400 w-65 h-50 justify-evenly p-4 rounded-md mb-19">
+      <div className="flex flex-col gap-4 mt-4 border border-gray-400 w-65 h-50 justify-evenly p-4 rounded-md mb-23">
         <div className="flex flex-row justify-between ">
           <label htmlFor="nombre" className="pt-2 text-m self-center h-10 font-semibold">Nombre</label>
           <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} maxLength={20} className="border-2 border-gray-300 rounded-md h-10 w-32 p-2" />

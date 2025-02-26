@@ -84,7 +84,7 @@ const MyIMC = () => {
           {imcStatus}
         </p>
 
-        <div className="w-full bg-[#F5F9FF] rounded-lg p-10 mb-9 border border-[#36AAFF]/20">
+        <div className="w-full bg-[#F5F9FF] rounded-lg p-10 mb-10 border border-[#36AAFF]/20">
           <p className="text-4xl font-bold text-[#36AAFF] text-center">{imc}</p>
         </div>
 
