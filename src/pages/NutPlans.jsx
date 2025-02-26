@@ -69,24 +69,26 @@ const NutPlans = () => {
             <div key={index} className="mb-4 border rounded-lg overflow-hidden border-[#36AAFF] bg-white shadow-sm">
               <button
                 onClick={() => toggleMeal(index)}
-                className="w-full flex items-center justify-between p-4 bg-[#36AAFF] text-white hover:bg-[#4db3ff] transition-colors duration-200"
+                className="w-full flex items-center justify-between p-4 bg-[#E3F2FD] text-[#36AAFF] hover:bg-[#d1e8fc] transition-colors duration-200"
               >
-                <span className="text-lg font-bold">{meal.title}</span>
-                <svg
-                  className={`w-6 h-6 transform transition-transform duration-200 ${
-                    openMeal === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                <div className="flex items-center">
+                  <svg
+                    className={`w-4 h-4 mr-2 transform transition-transform duration-200 ${
+                      openMeal === index ? "rotate-90" : ""
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                  <span className="text-lg font-bold">{meal.title}</span>
+                </div>
               </button>
               <div 
                 className={`transition-all duration-200 ease-in-out ${
@@ -94,11 +96,13 @@ const NutPlans = () => {
                 } overflow-hidden`}
               >
                 <div className="p-4 bg-[#f8faff]">
-                  {meal.content.split("\n").map((item, i) => (
-                    <p key={i} className="mb-2 last:mb-0 text-gray-700">
-                      {item}
-                    </p>
-                  ))}
+                  <ul className="list-disc list-inside">
+                    {meal.content.split("\n").map((item, i) => (
+                      <li key={i} className="mb-2 last:mb-0 text-gray-700">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
