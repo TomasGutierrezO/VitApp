@@ -7,6 +7,7 @@ const NutPlans = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [imcStatus, setImcStatus] = useState("")
   const [meals, setMeals] = useState([])
+  const [openMeal, setOpenMeal] = useState(null)
 
   const dietPlans = {
     "Bajo peso": [
@@ -47,6 +48,10 @@ const NutPlans = () => {
     }
   }, [])
 
+  const toggleMeal = (index) => {
+    setOpenMeal(openMeal === index ? null : index)
+  }
+
   return (
     <div className="p-4 bg-[#ffffff] flex flex-col h-screen">
       <div className="flex w-full justify-between p-4 mb-6">
@@ -58,30 +63,43 @@ const NutPlans = () => {
 
       {meals.length > 0 && (
         <div className="w-full max-w-md mx-auto bg-[#F5F9FF] p-4 border-2 border-[#36AAFF] rounded-lg">
-          <h2 className="text-center text-xl font-bold mb-4 text-[#36AAFF]">Tu plan nutricional</h2>
+          <h2 className="text-center text-xl font-bold mb-4 text-[#36AAFF] mb-10">Tu plan nutricional</h2>
 
           {meals.map((meal, index) => (
-            <div key={index} className="mb-6 last:mb-0">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-4 h-4 flex-shrink-0">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#36AAFF]">
-                    <path
-                      d="M20 6L9 17L4 12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+            <div key={index} className="mb-4 border rounded-lg overflow-hidden border-[#36AAFF] bg-white shadow-sm">
+              <button
+                onClick={() => toggleMeal(index)}
+                className="w-full flex items-center justify-between p-4 bg-[#36AAFF] text-white hover:bg-[#4db3ff] transition-colors duration-200"
+              >
+                <span className="text-lg font-bold">{meal.title}</span>
+                <svg
+                  className={`w-6 h-6 transform transition-transform duration-200 ${
+                    openMeal === index ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div 
+                className={`transition-all duration-200 ease-in-out ${
+                  openMeal === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                } overflow-hidden`}
+              >
+                <div className="p-4 bg-[#f8faff]">
+                  {meal.content.split("\n").map((item, i) => (
+                    <p key={i} className="mb-2 last:mb-0 text-gray-700">
+                      {item}
+                    </p>
+                  ))}
                 </div>
-                <span className="text-lg font-semibold text-[#36AAFF]">{meal.title}</span>
-              </div>
-              <div className="pl-7 text-gray-600">
-                {meal.content.split("\n").map((item, i) => (
-                  <p key={i} className="mb-1 last:mb-0">
-                    {item}
-                  </p>
-                ))}
               </div>
             </div>
           ))}
