@@ -114,14 +114,18 @@ const Diseases = () => {
 
   return (
     <div className="p-4 bg-[#ffffff] flex flex-col h-screen">
-      <div className="flex w-full justify-between p-4 mb-6">
+      <div className="flex w-full justify-between p-4 mb-6 z-20">
         <SidebarSwitch onClick={() => setIsSidebarOpen(true)} />
         <AppName />
       </div>
-      {isSidebarOpen && <Sidebar onClose={() => setIsSidebarOpen(false)} />}
-      <h2 className="text-3xl font-bold mb-8 text-[#36AAFF] text-center">Posibles Enfermedades - {imcStatus}</h2>
+      {isSidebarOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 z-50">
+          <Sidebar onClose={() => setIsSidebarOpen(false)} />
+        </div>
+      )}
+      <h2 className="text-3x1 font-bold mb-8 text-[#36AAFF] text-center">Posibles Enfermedades</h2>
       {enfermedades.length > 0 && (
-        <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:shadow-xl">
+        <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:shadow-xl z-10">
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-[#36AAFF] mb-4 border-b-2 border-blue-200 pb-2">{enfermedades[currentIndex].title}</h3>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">{enfermedades[currentIndex].content}</p>
