@@ -121,11 +121,14 @@ const Diseases = () => {
       {isSidebarOpen && <Sidebar onClose={() => setIsSidebarOpen(false)} />}
       <h2 className="text-3xl font-bold mb-8 text-[#36AAFF] text-center">Posibles Enfermedades - {imcStatus}</h2>
       {enfermedades.length > 0 && (
-        <div className="w-full max-w-md mx-auto bg-[#F5F9FF] p-4 border-2 border-[#36AAFF] rounded-lg text-center">
+        <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:shadow-xl">
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-[#36AAFF]">{enfermedades[currentIndex].title}</h3>
-            <p className="text-gray-600 mt-2">{enfermedades[currentIndex].content}</p>
-            <p className="text-green-600 mt-2 font-medium">Prevención: {enfermedades[currentIndex].prevention}</p>
+            <h3 className="text-2xl font-bold text-[#36AAFF] mb-4 border-b-2 border-blue-200 pb-2">{enfermedades[currentIndex].title}</h3>
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">{enfermedades[currentIndex].content}</p>
+            <div className="bg-green-50 p-6 rounded-xl border-l-4 border-green-400">
+              <h4 className="font-semibold text-green-800 mb-2 text-lg">Prevención:</h4>
+              <p className="text-green-700 leading-relaxed">{enfermedades[currentIndex].prevention}</p>
+            </div>
           </div>
           <div className="flex justify-between mt-4">
             <button onClick={handlePrev} className="px-4 py-2 bg-[#36AAFF] text-white rounded-lg">← Anterior</button>
@@ -133,6 +136,15 @@ const Diseases = () => {
           </div>
         </div>
       )}
+
+      <div className="mt-8 flex justify-center space-x-2">
+        {enfermedades.map((_, index) => (
+          <span
+            key={index}
+            className={`h-3 w-3 rounded-full ${index === currentIndex ? "bg-[#36AAFF]" : "bg-blue-100"}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
