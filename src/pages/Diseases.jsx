@@ -123,7 +123,7 @@ const Diseases = () => {
           <Sidebar onClose={() => setIsSidebarOpen(false)} />
         </div>
       )}
-      <h2 className="text-3x1 font-bold mb-8 text-[#36AAFF] text-center">Posibles Enfermedades</h2>
+      <h2 className="text-3xl font-bold mb-8 text-[#36AAFF] text-center">Posibles Enfermedades</h2>
       {enfermedades.length > 0 && (
         <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 ease-in-out transform hover:shadow-xl z-10">
           <div className="mb-6">
