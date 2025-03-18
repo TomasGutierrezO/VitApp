@@ -36,7 +36,7 @@ const Gender = () => {
 
   return (
     <div className="flex flex-col items-center h-screen p-1 gap-10">
-      <div className="flex gap-4">
+      <div className="flex gap-4 p-3">
         <img
           src="/flecha-atras.png"
           alt="Atrás"
