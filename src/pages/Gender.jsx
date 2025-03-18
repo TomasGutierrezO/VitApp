@@ -35,7 +35,7 @@ const Gender = () => {
   };
 
   return (
-    <div className="p-4 bg-white flex flex-col items-center h-screen space-evenly">
+    <div className="flex flex-col items-center h-screen p-1 gap-10">
       <div className="flex gap-4">
         <img
           src="/flecha-atras.png"
@@ -47,16 +47,16 @@ const Gender = () => {
       </div>
 
       <div>
-        <p className="tracking-tight font-semibold p-2 text-3xl mb-9 pb-5 text-center">
+        <p className="tracking-tight font-semibold p-1 text-3xl mb-3 pb-1 text-center">
           Aumenta tu metabolismo con nuestra atención personalizada
         </p>
       </div>
-      <p className="font-bold mx-5 text-[#36AAFF] text-3xl pb-6 text-center">
+      <p className="font-bold mx-5 text-[#36AAFF] text-3xl pb-1 text-center">
         Selecciona tu género:
       </p>
 
       {/* Seleccionar Género */}
-      <div className="flex justify-center gap-4 mt-7 mb-13">
+      <div className="flex justify-center gap-4 mt-7 mb-5">
         {/* Femenino */}
         <div className="flex flex-col items-center" onClick={() => manejarSeleccion("Femenino")}>
           <div
@@ -80,10 +80,12 @@ const Gender = () => {
           </div>
           <p className="tracking-tight font-semibold text-xl mt-2 text-center">Masculino</p>
         </div>
+
       </div>
 
       <Button onClick={manejarContinuar} text="Continuar" />
     </div>
+    
   );
 };
 
